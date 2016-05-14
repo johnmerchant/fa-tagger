@@ -1,0 +1,45 @@
+@import '../../node_modules/sierra-library/src/variables';
+@import 'variables';
+
+@import '../../node_modules/sierra-library/src/library';
+@import 'splash';
+
+body {
+    font-family: $basefont;
+}
+
+.tag-delete {
+    display: inline-block;
+}
+
+.input-search {
+    min-width: 512px;
+    border-radius: 18px;
+    
+    input {
+        border-radius: 18px;
+    }
+}
+
+.icon-preview {
+    
+    span {
+        margin-right: 48px;
+    }
+    
+    .icon-preview-huge {
+        font-size: 82px;
+    }
+    
+    .icon-preview-big {
+        font-size: 48px;
+    }
+    
+    .icon-preview-medium {
+        font-size: 36px;
+    }
+    
+    .icon-preview-small {
+        font-size: 24px;
+    }
+}
