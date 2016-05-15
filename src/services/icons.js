@@ -10,10 +10,10 @@ export class IconsService {
         http.configure(config => config
             .useStandardConfiguration()
             .withBaseUrl('https://cdn.rawgit.com/FortAwesome/Font-Awesome/master/src/'));
-        
+
         this.http = http;
     }
-    
+
     load() {
         return this.http.fetch('icons.yml')
             .then(response => response.text())

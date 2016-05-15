@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --config webpack.config.js --hot --inline --progress --devtool eval",
-    "build": "webpack --config webpack.config.js --progress --profile"
+    "build": "webpack --config webpack.config.js --progress --profile",
+    "test": "karma start karma.conf.js"
   },
   "author": "John Merchant <john@merchant.on.net>",
   "license": "MIT",
@@ -43,12 +44,17 @@
     "file-loader": "^0.8.5",
     "html-loader": "^0.4.3",
     "html-webpack-plugin": "^2.9.0",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.22",
+    "karma-jasmine": "^1.0.2",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "karma-webpack": "^1.7.0",
+    "phantomjs-prebuilt": "^2.1.7",
     "raw-loader": "^0.5.1",
     "sass-loader": "^3.2.0",
     "sierra-library": "^2.0.0",
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.7",
-    "wallaby-webpack": "0.0.22",
     "webpack": "^1.12.14",
     "webpack-dev-server": "^1.14.1"
   }
