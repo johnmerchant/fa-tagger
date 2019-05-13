@@ -1,9 +1,0 @@
-<template bindable="router">
-   <h1 class="text-big align-center"> 
-      <i class="fa fa-flag"></i>
-      ${router.title}
-   </h1>
-   <div class="tabs nav-tabs">
-      <a class="tab ${link.isActive ? 'active' : ''}" repeat.for="link of router.navigation" href.bind="link.href">${link.title}<a>
-   </div>
-</template>
