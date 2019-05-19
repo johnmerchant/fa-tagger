@@ -1,9 +1,16 @@
-import React from 'react';
+import * as React from 'react';
 import ReactDOM from 'react-dom';
+import {Root} from './app/components/Root';
+import {reducer} from './app/reducers';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 
-console.log('Hello from tsx!')
+const store = createStore(
+  reducer,
+  applyMiddleware(thunk)
+);
 
 ReactDOM.render(
-  <p>Hello</p>,
+  <Root store={store} />,
   document.getElementById('root'),
-)
+);

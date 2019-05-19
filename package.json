@@ -6,14 +6,29 @@
   "author": "John Merchant <john@merchant.on.net>",
   "license": "MIT",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.8.2",
+    "@fortawesome/fontawesome-svg-core": "^1.2.18",
+    "@fortawesome/react-fontawesome": "^0.1.4",
+    "cross-fetch": "^3.0.2",
+    "normalize.css": "^8.0.1",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "react-redux": "^7.0.3",
+    "react-router-dom": "^5.0.0",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0",
+    "styled-components": "^4.2.0",
+    "yaml": "^1.5.1"
   },
   "scripts": {
     "dev": "parcel index.html",
     "build": "parcel build index.html"
   },
   "devDependencies": {
+    "@types/react-redux": "^7.0.9",
+    "@types/react-router-dom": "^4.3.3",
+    "@types/styled-components": "^4.1.15",
+    "@types/yaml": "^1.0.2",
     "typescript": "^3.4.5"
   }
 }
