@@ -4,6 +4,7 @@ import {Root} from './components/Root';
 import {reducer} from './reducers';
 import {createStore, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
+import './util/font-awesome';
 
 const store = createStore(reducer, applyMiddleware(thunk));
 

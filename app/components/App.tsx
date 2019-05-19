@@ -27,4 +27,4 @@ export const App = () =>
                 </Footer>
             </Container>
         </Startup>
-    </Router>;
+    </Router>; 

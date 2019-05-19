@@ -8,5 +8,6 @@ import {IconName} from '@fortawesome/fontawesome-common-types';
 type IconProps = { iconName: string, iconData: IconData };
 
 export const Icon = ({ iconName, iconData }: IconProps) => <div>
+    <p>{iconName}</p>
     <FontAwesomeIcon icon={iconName as IconName} />
 </div>;
