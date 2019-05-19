@@ -8,23 +8,23 @@ import {Tags} from './Tags';
 
 export const App = () => 
     <Router>
-        <Startup>
-            <Container>
-                <Header>
-                    <H1>fa-tagger</H1>
-                </Header>
-                <Nav>
-                    <NavLink to="/icons">Icons</NavLink>
-                    <NavLink to="/tags">Tags</NavLink>
-                </Nav>
-                <Main>
+        <Container>
+            <Header>
+                <H1>fa-tagger></H1>
+            </Header>
+            <Nav>
+                <NavLink to="/icons">Icons</NavLink>
+                <NavLink to="/tags">Tags</NavLink>
+            </Nav>
+            <Main>
+                <Startup>
                     <Route exact path="/" component={Home}></Route>
                     <Route path="/icons" component={Icons}></Route>
                     <Route path="/tags" component={Tags}></Route>
-                </Main>
-                <Footer>
-                    <P>by @_jmercha 2019</P>
-                </Footer>
-            </Container>
-        </Startup>
+                </Startup>
+            </Main>
+            <Footer>
+                <P>by @_jmercha 2019</P>
+            </Footer>
+        </Container>
     </Router>; 

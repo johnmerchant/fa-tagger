@@ -1,6 +1,9 @@
 import fetch from 'cross-fetch';
 import * as YAML from 'yaml';
 import { Dispatch, ActionCreator, Action } from 'redux';
+import { library, IconDefinition } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+
 import { Icons } from '../@types/icons';
 
 export type FETCH_ICONS_REQUEST = 'FETCH_ICONS_REQUEST';
@@ -26,9 +29,28 @@ export const fetchIcons = () => async (dispatch: Dispatch) => {
             return;
         }
         const text = await response.text();
-        const icons = YAML.parse(text);
+        const icons: Icons = YAML.parse(text);
+
+        library.reset();
+        for (const key in icons) {
+            let fasIcon: IconDefinition = null;
+            for (const fasKey in fas) {
+                if (fas[fasKey].iconName === key) {
+                    fasIcon = fas[fasKey];
+                    break;
+                }
+            }
+            if (fasIcon) {
+                library.add(fasIcon);
+            }
+            else {
+                delete icons[key];
+            }
+        }
+
         dispatch(fetchIconsSuccess(icons));
     } catch (err) {
+        library.reset();
         dispatch(fetchIconsFailure(err));
     }
 };

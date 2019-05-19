@@ -6,6 +6,7 @@ import { Icons } from '../@types/icons';
 import { fetchIcons } from '../actions/icons';
 import { getTags } from '../actions/tags';
 import { ThunkDispatch } from 'redux-thunk';
+import {Spinner} from '../styles';
 
 interface StartupDispatch {
     fetchIcons(): void;
@@ -25,7 +26,7 @@ const StartupComponent = ({ children, fetchIcons, getTags, icons, isLoading, isL
         if (!isLoading && !isLoaded && !icons) fetchIcons();
         getTags();
     });
-    return <React.Fragment>{children}</React.Fragment>;
+    return <React.Fragment>{isLoading ? <Spinner/> : children}</React.Fragment>;
 };
 
 const mapStateToProps = (state: State): StartupState => ({

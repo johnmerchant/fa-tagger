@@ -1,4 +1,3 @@
-
 import styled from 'styled-components';
 
 export const fontFamily = "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"
@@ -10,7 +9,6 @@ export const H1 = styled.h1`
 export const H2 = styled.h2`
     font-family: ${fontFamily};
 `;
-
 
 export const H3 = styled.h3`
     font-family: ${fontFamily};
