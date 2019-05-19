@@ -1,0 +1,19 @@
+{
+  "name": "fa-tagger",
+  "version": "2.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/jmercha/fa-tagger.git",
+  "author": "John Merchant <john@merchant.on.net>",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "devDependencies": {
+    "typescript": "^3.4.5"
+  }
+}
