@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import * as colors from './colors';
 
 export const fontFamily = "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"
 
@@ -12,6 +13,7 @@ export const H2 = styled.h2`
 
 export const H3 = styled.h3`
     font-family: ${fontFamily};
+    color: ${colors.DARKEST};
 `;
 
 export const H4 = styled.h4`

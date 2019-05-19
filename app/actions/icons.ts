@@ -18,7 +18,21 @@ export type FETCH_ICONS_SUCCESS = 'FETCH_ICONS_SUCCESS';
 export type FetchIconsSuccess = Action<FETCH_ICONS_SUCCESS> & { icons: Icons };
 export const fetchIconsSuccess: ActionCreator<FetchIconsSuccess> = (icons: Icons) => ({type: 'FETCH_ICONS_SUCCESS', icons});
 
-export type FetchIconsAction = FetchIconsRequest | FetchIconsFailure | FetchIconsSuccess;
+export type FILTER_ICONS = 'FILTER_ICONS';
+export type FilterIcons = Action<FILTER_ICONS> & { filter?: string };
+export const filterIcons: ActionCreator<FilterIcons> = (filter?: string) => ({
+    type: 'FILTER_ICONS', 
+    filter,
+    meta: {
+        debounce: {
+            time: 100,
+            leading: false,
+            trailing: true
+        }
+    }
+ });
+
+export type IconsAction = FetchIconsRequest | FetchIconsFailure | FetchIconsSuccess | FilterIcons;
 
 export const fetchIcons = () => async (dispatch: Dispatch) => {
     dispatch(fetchIconsRequest());

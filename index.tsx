@@ -4,10 +4,11 @@ import {Root} from './app/components/Root';
 import {reducer} from './app/reducers';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
+import createDebounce from 'redux-debounced';
 
 const store = createStore(
   reducer,
-  applyMiddleware(thunk)
+  applyMiddleware(thunk, createDebounce())
 );
 
 ReactDOM.render(
