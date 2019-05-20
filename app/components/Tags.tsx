@@ -6,5 +6,5 @@ interface TagsProps {
 };
 
 export const Tags = ({tags, onDelete}: TagsProps) => <span>
-    
+    {tags.map(tag => <span>{tag}</span>)}
 </span>;
