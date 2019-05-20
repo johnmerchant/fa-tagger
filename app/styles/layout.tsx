@@ -68,6 +68,12 @@ export const Centered = styled.div`
     align-items: center;
 `;
 
+export const Panel = styled.article`
+    display: flex;
+    align-items: center;
+    flex-direction: column; 
+`;
+
 export const Footer = styled.footer`
     grid-area: footer;
     text-align: center;
