@@ -19,7 +19,6 @@ export const icons = (state: State = { isLoading: false, isLoaded: false }, acti
         case 'FETCH_ICONS_FAILURE':
             return {...state, isLoading: false, isLoaded: false, error: action.error };
         case 'FILTER_ICONS':
-            console.log(state);
             if (state.icons && action.filter) {
                 let filtered = {...state.icons};
                 let expr = new RegExp(state.filter, 'gi');

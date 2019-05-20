@@ -1,8 +1,14 @@
 
 import {NavLink as RouterNavLink} from 'react-router-dom';
-import styled from 'styled-components';
+import styled, {createGlobalStyle} from 'styled-components';
 import {fontFamily} from './typography';
 import * as colors from './colors';
+
+export const Global = createGlobalStyle`
+    body {
+        background-color: ${colors.WHITE};
+    }
+`;
 
 export const Container = styled.main`
     width: 100%;
@@ -50,6 +56,13 @@ export const NavLink = styled(RouterNavLink)`
 
 export const Main = styled.main`
     grid-area: main;
+    display: flex;
+    justify-content: center;
+    margin-left: 40px;
+    margin-right: 40px;
+`;
+
+export const Centered = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
