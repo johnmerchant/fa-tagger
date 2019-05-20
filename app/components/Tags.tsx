@@ -1,10 +1,10 @@
 import * as React from 'react';
-import {connect} from 'react-redux';
 
-const TagsComponent = ({ 
+interface TagsProps {
+    tags: string[],
+    onDelete?: (tag: string) => void;
+};
 
- }) => <div>
-
-</div>;
-
-export const Tags = connect()(TagsComponent);
+export const Tags = ({tags, onDelete}: TagsProps) => <span>
+    
+</span>;

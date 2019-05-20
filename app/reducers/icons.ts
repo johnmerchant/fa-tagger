@@ -21,7 +21,7 @@ export const icons = (state: State = { isLoading: false, isLoaded: false }, acti
         case 'FILTER_ICONS':
             if (state.icons && action.filter) {
                 let filtered = {...state.icons};
-                let expr = new RegExp(state.filter, 'gi');
+                let expr = new RegExp(action.filter, 'gi');
                 for (const key in filtered) {
                     const icon = filtered[key];
                     const match = expr.test(key) 

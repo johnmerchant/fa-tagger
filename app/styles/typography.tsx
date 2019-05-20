@@ -14,6 +14,7 @@ export const H2 = styled.h2`
 export const H3 = styled.h3`
     font-family: ${fontFamily};
     color: ${colors.DARKEST};
+    text-align: center;
 `;
 
 export const H4 = styled.h4`
