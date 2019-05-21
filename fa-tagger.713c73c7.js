@@ -369,4 +369,4 @@ var t=arguments[3];Object.defineProperty(exports,"__esModule",{value:!0}),export
 },{}],"zo2T":[function(require,module,exports) {
 "use strict";var e=this&&this.__importStar||function(e){if(e&&e.__esModule)return e;var r={};if(null!=e)for(var t in e)Object.hasOwnProperty.call(e,t)&&(r[t]=e[t]);return r.default=e,r},r=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};exports.__esModule=!0;var t=e(require("react")),u=r(require("react-dom")),o=require("./app/components/Root"),a=require("./app/reducers"),d=require("redux"),i=r(require("redux-thunk")),n=r(require("redux-debounced")),l=d.createStore(a.reducer,d.applyMiddleware(i.default,n.default()));u.default.render(t.createElement(o.Root,{store:l}),document.getElementById("root"));
 },{"react":"HdMw","react-dom":"X9zx","./app/components/Root":"655E","./app/reducers":"4xv5","redux":"9WZ3","redux-thunk":"364R","redux-debounced":"FjJx"}]},{},["zo2T"], null)
-//# sourceMappingURL=/fa-tagger.713c73c7.js.map
+//# sourceMappingURL=/fa-tagger/fa-tagger.713c73c7.js.map
