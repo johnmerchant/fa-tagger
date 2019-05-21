@@ -1,4 +1,7 @@
+import { IconName } from "@fortawesome/fontawesome-svg-core";
+
 export interface Icon {
+    id: IconName;
     changes: string[];
     label: string;
     search: { terms: string[]; },

@@ -10,6 +10,7 @@ export const H1 = styled.h1`
 
 export const H2 = styled.h2`
     font-family: ${fontFamily};
+    color: ${colors.DARKER};
 `;
 
 export const H3 = styled.h3`

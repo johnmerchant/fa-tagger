@@ -1,7 +1,7 @@
 import fetch from 'cross-fetch';
 import * as YAML from 'yaml';
 import { Dispatch, ActionCreator, Action } from 'redux';
-import { library, IconDefinition } from '@fortawesome/fontawesome-svg-core';
+import { library, IconDefinition, IconName } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 
 import { Icons } from '../@types/icons';
@@ -56,14 +56,14 @@ export const fetchIcons = () => async (dispatch: Dispatch) => {
             }
             if (fasIcon) {
                 library.add(fasIcon);
-            }
-            else {
+                icons[key].id = <IconName>key;
+            } else {
                 delete icons[key];
             }
         }
-
         dispatch(fetchIconsSuccess(icons));
     } catch (err) {
+        console.error(err);
         library.reset();
         dispatch(fetchIconsFailure(err));
     }

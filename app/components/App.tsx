@@ -4,11 +4,13 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 import {Startup} from './Startup';
 import {Home} from './Home';
 import {IconsPage} from './IconsPage';
-import {Tags} from './Tags';
 import {IconPage} from './IconPage';
+import {DocumentTitle} from './DocumentTitle';
+import {TagPage} from './TagPage';
+import {TagsPage} from './TagsPage';
 
 export const App = () => 
-    <React.Fragment>
+    <DocumentTitle title="fa-tagger">
         <Global />
         <Router>
             <Container>
@@ -23,8 +25,9 @@ export const App = () =>
                     <Startup>
                         <Route exact path="/" component={Home}></Route>
                         <Route exact path="/icons" component={IconsPage}></Route>
-                        <Route path="/icons/:iconId" render={(props) => <IconPage iconId={props.match.params.iconId} />}></Route>
-                        <Route path="/tags" component={Tags}></Route>
+                        <Route exact path="/icons/:iconId" render={(props) => <IconPage iconId={props.match.params.iconId} />}></Route>
+                        <Route exact path="/tags" component={TagsPage}></Route>
+                        <Route exact path="/tags/:tag" render={(props) => <TagPage tag={props.match.params.tag} />}></Route>
                     </Startup>
                 </Main>
                 <Footer>
@@ -32,4 +35,4 @@ export const App = () =>
                 </Footer>
             </Container>
         </Router>
-    </React.Fragment>; 
+    </DocumentTitle>; 

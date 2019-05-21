@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { WHITE } from './colors';
+import { WHITE, DARKEST } from './colors';
 import { fontFamily } from './typography';
 
 export const TagsContainer = styled.div`
@@ -12,7 +12,8 @@ export const TagsContainer = styled.div`
 export const TagDelete = styled.button`
     border: none;
     background: 0;
-    padding: 2px 4px;
+    padding: 2px 2px;
+    font-size: 14px;
 
     :hover {
         cursor: pointer;
@@ -29,6 +30,16 @@ export const Tag = styled.div`
     font-family: ${fontFamily};
     background-color: ${WHITE};
     margin: 2px;
-    padding: 2px;
+    padding: 2px 8px;
     border-radius: 4px;
+`;
+
+export const TagDark = styled(Tag)`
+    background-color: ${DARKEST};
+    color: ${WHITE};
+`;
+
+export const TagDeleteDark = styled(TagDelete)`
+    background-color: ${DARKEST};
+    color: ${WHITE};    
 `;

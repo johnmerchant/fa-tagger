@@ -10,3 +10,4 @@ export * from './grid';
 export * from './spinner';
 export * from './icon-panel';
 export * from './tags';
+export * from './autocomplete';
