@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import * as colors from './colors';
+import { Link } from 'react-router-dom';
 
 export const fontFamily = "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"
 
@@ -24,4 +25,9 @@ export const H4 = styled.h4`
 export const P = styled.p`
     font-family: ${fontFamily};
     text-align: center;
+`;
+
+export const A = styled(Link)`
+    text-decoration: none;
+    color: inherit;
 `;

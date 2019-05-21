@@ -19,9 +19,14 @@ export const IconPanelHeading = styled(H3)`
 `;
 
 export const IconPanelIcon = styled.div`
-    flex-grow: 1;
+    flex-grow: 2;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+`;
+
+export const IconPanelTags = styled.div`
+    display: flex;
+    flex-grow: 1;
 `;

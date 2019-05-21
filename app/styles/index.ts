@@ -9,4 +9,4 @@ export * from './input';
 export * from './grid';
 export * from './spinner';
 export * from './icon-panel';
-
+export * from './tags';
