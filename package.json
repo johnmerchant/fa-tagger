@@ -24,7 +24,7 @@
   },
   "scripts": {
     "dev": "parcel index.html",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html --public-url /fa-tagger"
   },
   "devDependencies": {
     "@types/react-redux": "^7.0.9",
