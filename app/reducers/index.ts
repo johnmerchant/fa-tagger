@@ -1,5 +1,5 @@
 import { icons } from './icons';
-import {tags} from './tags';
+import { tags } from './tags';
 import { combineReducers } from 'redux';
 
 export const reducer = combineReducers({ 
