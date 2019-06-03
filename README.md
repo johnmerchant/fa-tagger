@@ -16,7 +16,9 @@ The tags are all stored in your browser's local storage.
 
 I wanted to improve my understanding of Redux application structure & data flow.
 
-I originally created V1 as an example project for a talk I gave on Aurelia at an Adelaide Frontend JS meetup, but given there is a stronger market for React frontend developers I decided to implement V2 in React/Redux.
+I originally created V1 as an example project for a talk I gave on Aurelia at an Adelaide Frontend JS meetup in 2016, 
+
+But given the popularity of React/Redux in recent times I decided to implement V2 in React/Redux.
 
 ## Where?
 
