@@ -20,6 +20,15 @@ I originally created V1 as an example project for a talk I gave on Aurelia at an
 
 But given the popularity of React/Redux in recent times I decided to implement V2 in React/Redux.
 
+## How?
+
+* [TypeScript](https://github.com/microsoft/TypeScript)
+* [React](https://github.com/facebook/react)
+* [Redux](https://github.com/reduxjs/redux)
+* [styled-components](https://github.com/styled-components/styled-components)
+* Bundler - [Parcel](https://parceljs.org/)
+
+
 ## Where?
 
-[Here](https://jmercha.github.io/fa-tagger)
+[Here!](https://jmercha.github.io/fa-tagger)
