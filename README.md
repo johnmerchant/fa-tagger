@@ -22,6 +22,7 @@ But given the popularity of React/Redux in recent times I decided to implement V
 
 ## How?
 
+* The magnificently impressive collection of [FontAwesome](https://fontawesome.com) icons!
 * [TypeScript](https://github.com/microsoft/TypeScript)
 * [React](https://github.com/facebook/react)
 * [Redux](https://github.com/reduxjs/redux)
