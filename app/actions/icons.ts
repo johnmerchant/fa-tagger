@@ -1,4 +1,4 @@
-import fetch from 'cross-fetch';
+import axios from 'axios';
 import * as YAML from 'yaml';
 import { Dispatch, ActionCreator, Action } from 'redux';
 import { library, IconDefinition, IconName } from '@fortawesome/fontawesome-svg-core';
@@ -37,13 +37,13 @@ export type IconsAction = FetchIconsRequest | FetchIconsFailure | FetchIconsSucc
 export const fetchIcons = () => async (dispatch: Dispatch) => {
     dispatch(fetchIconsRequest());
     try {
-        const response = await fetch('https://gitcdn.xyz/repo/FortAwesome/Font-Awesome/master/metadata/icons.yml');
-        if (!response.ok) {
+        const response = await axios('https://gitcdn.xyz/repo/FortAwesome/Font-Awesome/master/metadata/icons.yml');
+        if (response.status !== 200) {
             dispatch(fetchIconsFailure(new Error(`Response status not OK: ${response.status} ${response.statusText}`)));
             return;
         }
-        const text = await response.text();
-        const icons: Icons = YAML.parse(text);
+        
+        const icons: Icons = YAML.parse(response.data);
 
         library.reset();
         for (const key in icons) {
