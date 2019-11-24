@@ -63,7 +63,6 @@ export const fetchIcons = () => async (dispatch: Dispatch) => {
         }
         dispatch(fetchIconsSuccess(icons));
     } catch (err) {
-        console.error(err);
         library.reset();
         dispatch(fetchIconsFailure(err));
     }
