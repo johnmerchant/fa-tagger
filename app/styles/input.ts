@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import styled from '@emotion/styled';
+
 import * as colors from './colors';
 import {fontFamily} from './typography';
 

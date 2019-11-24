@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Global, Container, Nav, NavLink, Header, Main, Footer, H1, P} from '../styles';
+import {A, Global, Container, Nav, NavLink, Header, Main, Footer, H1, P} from '../styles';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import {Startup} from './Startup';
 import {Home} from './Home';
@@ -31,7 +31,7 @@ export const App = () =>
                     </Startup>
                 </Main>
                 <Footer>
-                    <P>by @_jmercha 2019</P>
+                    <P>Constructed with Coolness by <A to="https://jmercha.dev/">John Merchant</A></P>
                 </Footer>
             </Container>
         </Router>

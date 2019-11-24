@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import {DocumentTitle} from './DocumentTitle'; 
 import { Tags as TagsData } from '../@types/tags';
 import { Panel, H2, Centered, Spinner } from '../styles';
-import { Tags as TagsComponent } from './tags';
+import { Tags as TagsComponent } from './Tags';
 import { State } from '../reducers';
 import { deleteTag } from '../actions/tags';
 import { Dispatch } from 'redux';

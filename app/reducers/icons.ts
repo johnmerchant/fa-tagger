@@ -1,7 +1,8 @@
+import produce from 'immer';
 import { Icons } from '../@types/icons';
 import { IconsAction } from "../actions/icons";
 import { TagsAction } from '../actions/tags';
-import { IconTags } from '../@types/tags';
+import { IconTags, Tags, Tag } from '../@types/tags';
 
 interface State {
     filter?: string;
@@ -13,48 +14,66 @@ interface State {
     error?: Error;
 };
 
-export const icons = (state: State = { isLoading: false, isLoaded: false }, action: IconsAction | TagsAction) => {
+const initialState = { isLoading: false, isLoaded: false };
+
+export const icons = produce((state: State, action: IconsAction | TagsAction) => {
     switch (action.type) {
         case 'TAGS_UPDATE':
-            return {
-                ...state, 
-                iconTags: action.tags 
-                    ? Object.keys(action.tags)
-                        .map(key => ({ key, tag: action.tags[key] }))
-                        .reduce<{ icon: string, tag: string }[]>((x, y) => 
-                            x.concat(y.tag.icons.map(z => ({ icon: z, tag: y.key }))), [])
-                        .reduce<IconTags>((map, {icon, tag}) => {
-                            map[icon] = map[icon] || [];
-                            map[icon].push(tag);
-                            return map;
-                        }, {})
-                    : {}
-            };
+            state.iconTags = filterIcons(action.tags);
+            return;
         case 'FETCH_ICONS_SUCCESS':
-            return {...state, isLoading: false, isLoaded: true, error: null, icons: action.icons };
+            state.isLoading = false;
+            state.isLoaded = true;
+            state.error = null;
+            state.icons = action.icons;
+            return;
         case 'FETCH_ICONS_REQUEST':
-            return { ...state, isLoading: true, isLoaded: false, error: null };
+            state.isLoading = true;
+            state.isLoaded = false;
+            state.error = null;
+            return;
         case 'FETCH_ICONS_FAILURE':
-            return {...state, isLoading: false, isLoaded: false, error: action.error };
+            state.isLoading = false;
+            state.isLoaded = false;
+            state.error = action.error;
+            return;
         case 'FILTER_ICONS':
-            if (state.icons && action.filter) {
-                let filtered = {...state.icons};
+            state.filter = action.filter;
+            if (state.icons && state.filter) {
+                state.filtered = {...state.icons};
                 let expr = new RegExp(action.filter, 'gi');
-                for (const key in filtered) {
-                    const icon = filtered[key];
+                for (const key in state.filtered) {
+                    const icon = state.filtered[key];
                     const match = expr.test(key)
                         || (state.iconTags[key] && state.iconTags[key].some(tag => expr.test(tag)))
                         || expr.test(icon.label) 
                         || icon.search.terms.some(term => expr.test(term));
                     if (!match) {
-                        delete filtered[key];
+                        delete state.filtered[key];
                     }
                 }
-                return {...state, filtered, filter: action.filter };
             } else {
-                return {...state, filtered: null, filter: action.filter };
+                state.filtered = null;
             }
-        default: return { ...state };
+            return;
     }
-};
+}, initialState);
 
+type IconTag = { icon: string, tag: string };
+
+const reduceIconTagKeys = produce((x: IconTag[], y: { key: string, tag: Tag }) => {
+    x.push(...y.tag.icons.map(z => ({ icon: z, tag: y.key })));
+});
+
+const reduceIconTags = produce((map: IconTags, { icon, tag }: { icon: string, tag: string }) => {
+    map[icon] = map[icon] || [];
+    map[icon].push(tag);
+});
+
+const filterIcons = (tags?: Tags) => {
+    if (!tags) return {};
+    return Object.keys(tags)
+        .map(key => ({ key, tag: tags[key] }))
+        .reduce(reduceIconTagKeys, [])
+        .reduce(reduceIconTags, {});
+};

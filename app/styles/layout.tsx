@@ -1,14 +1,16 @@
-
+/** @jsx jsx */
+import { Global as GlobalStyle, jsx, css } from '@emotion/core';
 import {NavLink as RouterNavLink} from 'react-router-dom';
-import styled, {createGlobalStyle} from 'styled-components';
+import styled from '@emotion/styled';
+
 import {fontFamily} from './typography';
 import * as colors from './colors';
 
-export const Global = createGlobalStyle`
+export const Global = () => <GlobalStyle styles={css`
     body {
         background-color: ${colors.WHITE};
     }
-`;
+`}/>;
 
 export const Container = styled.main`
     width: 100%;

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Tags } from "./tags";
+import { Tags } from "./Tags";
 import {Panel, Input, Autocomplete, AutocompleteItem, Button} from '../styles';
 
 interface TagsInputProps {
