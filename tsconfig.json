@@ -1,6 +1,8 @@
 {
     "compilerOptions": {
-      "lib": ["es2015"],
+      "lib": ["es2017", "dom"],
+      "target": "es5",
+      "moduleResolution": "node",
       "jsx": "react",
       "typeRoots": ["./app/@types"]
     }

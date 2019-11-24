@@ -1,4 +1,5 @@
 import * as React from 'react';
+import 'babel-polyfill';
 import ReactDOM from 'react-dom';
 import {Root} from './app/components/Root';
 import {reducer} from './app/reducers';

@@ -14,7 +14,8 @@ export const IconPanel = styled.div`
     border-radius: 20px;
 `;
 
-export const IconPanelHeading = styled(H3)`
+export const IconPanelHeading = styled.h3`
+    ${H3}
     color: ${colors.WHITE};
 `;
 

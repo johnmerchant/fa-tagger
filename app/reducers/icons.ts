@@ -3,6 +3,7 @@ import { Icons } from '../@types/icons';
 import { IconsAction } from "../actions/icons";
 import { TagsAction } from '../actions/tags';
 import { IconTags, Tags, Tag } from '../@types/tags';
+import { Reducer } from 'redux';
 
 interface State {
     filter?: string;
@@ -16,7 +17,7 @@ interface State {
 
 const initialState = { isLoading: false, isLoaded: false };
 
-export const icons = produce((state: State, action: IconsAction | TagsAction) => {
+export const icons: Reducer<State> = produce((state: State, action: IconsAction | TagsAction) => {
     switch (action.type) {
         case 'TAGS_UPDATE':
             state.iconTags = filterIcons(action.tags);

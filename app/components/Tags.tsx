@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Tag, TagDark, TagDelete, TagDeleteDark, TagsContainer, A} from '../styles';
+import {Tag, TagDark, TagDelete, TagDeleteDark, TagsContainer, Link} from '../styles';
 
 interface TagsProps {
     tags: string[];
@@ -15,7 +15,7 @@ export const Tags = ({tags, onDelete, dark }: TagsProps) => {
     return <TagsContainer>
         {tags.map((tag, i) => <TagComponent  key={`t-${i}-${tag}`}>
             <DeleteComponent onClick={onDelete ? () => onDelete(tag) : null} />
-            <A to={'/tags/' + tag}>{tag}</A>
+            <Link to={'/tags/' + tag}>{tag}</Link>
         </TagComponent>)}
     </TagsContainer>;
 };

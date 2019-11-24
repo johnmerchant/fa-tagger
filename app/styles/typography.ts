@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import * as colors from './colors';
-import { Link } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 
 export const fontFamily = "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"
 
@@ -28,7 +28,7 @@ export const P = styled.p`
     text-align: center;
 `;
 
-export const A = styled(Link)`
+export const Link = styled(RouterLink)`
     text-decoration: none;
     color: inherit;
 `;

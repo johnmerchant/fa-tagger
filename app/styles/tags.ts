@@ -34,12 +34,14 @@ export const Tag = styled.div`
     border-radius: 4px;
 `;
 
-export const TagDark = styled(Tag)`
+export const TagDark = styled.div`
+    ${Tag}
     background-color: ${DARKEST};
     color: ${WHITE};
 `;
 
-export const TagDeleteDark = styled(TagDelete)`
+export const TagDeleteDark = styled.button`
+    ${TagDelete}
     background-color: ${DARKEST};
     color: ${WHITE};    
 `;

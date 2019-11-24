@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "main": "index.js",
   "repository": "https://github.com/jmercha/fa-tagger.git",
-  "author": "John Merchant <john@merchant.on.net>",
+  "author": "John Merchant <john@jmercha.dev>",
   "license": "MIT",
   "dependencies": {
     "@emotion/core": "^10.0.22",
@@ -12,6 +12,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.18",
     "@fortawesome/free-solid-svg-icons": "^5.8.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
+    "babel-polyfill": "^6.26.0",
     "cross-fetch": "^3.0.2",
     "immer": "^5.0.0",
     "normalize.css": "^8.0.1",
@@ -29,10 +30,18 @@
     "build": "parcel build index.html --public-url /fa-tagger"
   },
   "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/preset-react": "^7.7.4",
+    "@babel/preset-typescript": "^7.7.4",
+    "@types/node": "^12.12.12",
     "@types/react-redux": "^7.0.9",
     "@types/react-router-dom": "^4.3.3",
     "@types/yaml": "^1.0.2",
+    "babel-plugin-emotion": "^10.0.23",
+    "babel-plugin-transform-inline-environment-variables": "^0.4.3",
     "parcel": "^1.12.4",
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-typescript": "^1.0.0",
     "typescript": "^3.4.5"
   }
 }

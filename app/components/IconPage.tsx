@@ -8,7 +8,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { IconName } from '@fortawesome/fontawesome-svg-core';
 import { TagsInput } from './TagsInput';
 import { setTag, unsetTag } from '../actions/tags';
-import { IconTags, Tags } from '../@types/tags';
+import { IconTags } from '../@types/tags';
 import { DocumentTitle } from './DocumentTitle';
 
 interface IconPageArgs {

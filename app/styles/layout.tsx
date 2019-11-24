@@ -10,7 +10,7 @@ export const Global = () => <GlobalStyle styles={css`
     body {
         background-color: ${colors.WHITE};
     }
-`}/>;
+`}/>
 
 export const Container = styled.main`
     width: 100%;
