@@ -1,4 +1,6 @@
-import * as React from 'react';
+/** @jsx jsx */
+import { jsx } from '@emotion/core';
+import { useState } from 'react';
 import { Tags } from "./Tags";
 import {Panel, Input, Autocomplete, AutocompleteItem, Button} from '../styles';
 
@@ -11,7 +13,7 @@ interface TagsInputProps {
 
 export const TagsInput = ({ tags, availableTags, onDelete, onAdd }: TagsInputProps) => {
     
-    const [value, setValue] = React.useState('');
+    const [value, setValue] = useState('');
     const autocompleteTags = value ? availableTags.filter(z => z.startsWith(value)) : [];
 
     return <Panel>

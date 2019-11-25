@@ -1,4 +1,5 @@
-import * as React from 'react';
+/** @jsx jsx */
+import { jsx } from '@emotion/core';
 import { connect } from "react-redux";
 import {DocumentTitle} from './DocumentTitle'; 
 import { Tags as TagsData } from '../@types/tags';

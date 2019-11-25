@@ -1,4 +1,6 @@
-import * as React from 'react';
+/** @jsx jsx */
+import { jsx } from '@emotion/core';
+
 import { Grid, GridCol } from '../styles';
 import { Icon } from '../@types/icons';
 import { Icon as IconComponent } from './Icon';

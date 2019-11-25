@@ -1,5 +1,5 @@
 {
-    "presets": ["@babel/preset-react", "@babel/preset-typescript"],
+    "presets": ["@babel/preset-react", "@babel/preset-typescript", "@emotion/babel-preset-css-prop"],
     "plugins": [
         "transform-inline-environment-variables",
         "babel-plugin-emotion"

@@ -1,4 +1,5 @@
-import * as React from 'react';
+/** @jsx jsx */
+import { jsx } from '@emotion/core';
 import { connect } from 'react-redux';
 import { DocumentTitle } from "./DocumentTitle";
 import { H2, Input, Panel, Label, InputGroup, Centered, Spinner, H3 } from '../styles';
@@ -9,25 +10,23 @@ import { setTagDescription, unsetTag } from '../actions/tags';
 import { IconsGrid } from './IconsGrid';
 import { Icons } from '../@types/icons';
 
-interface TagState {
+type TagState = {
     tags?: Tags;
     icons?: Icons;
     iconTags?: IconTags;
 }
 
-interface TagDispatch {
+type TagDispatch = {
     onDescriptionChanged(tag: string, description: string): void;
     onDeleteTag(tag: string, icon: string): void;
 }
 
-interface TagArgs {
-    tag: string;
-}
+type TagArgs = { tag: string; }
 
 type TagProps = TagState & TagDispatch & TagArgs;
 
 const TagPageComponent = ({ tag, tags, icons, iconTags, onDescriptionChanged, onDeleteTag }: TagProps) => {
-    if (!tags) {
+    if (!tags || !tags[tag]) {
         return <DocumentTitle title={'ta-tagger | Loading ...'}><Centered><Spinner /></Centered></DocumentTitle>
     }
     return <DocumentTitle title={'ta-tagger | ' + tag}>
@@ -44,7 +43,7 @@ const TagPageComponent = ({ tag, tags, icons, iconTags, onDescriptionChanged, on
             <H3>Icons with Tag</H3>
             <IconsGrid icons={tags[tag].icons.map(i => icons[i])} iconTags={iconTags} onDeleteTag={onDeleteTag} />
         </Panel>
-    </DocumentTitle>
+    </DocumentTitle>;
 }
 
 export const TagPage = connect(

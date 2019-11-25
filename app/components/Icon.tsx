@@ -1,4 +1,5 @@
-import * as React from 'react';
+/** @jsx jsx */
+import { jsx } from '@emotion/core';
 
 import { Icon as IconData } from '../@types/icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

@@ -1,4 +1,5 @@
-import * as React from 'react';
+/** @jsx jsx */
+import { jsx } from '@emotion/core';
 import 'babel-polyfill';
 import ReactDOM from 'react-dom';
 import {Root} from './app/components/Root';

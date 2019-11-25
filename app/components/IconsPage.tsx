@@ -1,4 +1,6 @@
-import * as React from 'react';
+/** @jsx jsx */
+import { jsx } from '@emotion/core';
+
 import {connect} from 'react-redux';
 import { Icons as IconsData } from '../@types/icons';
 import { IconTags } from '../@types/tags';

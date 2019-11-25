@@ -1,4 +1,5 @@
-import * as React from 'react';
+/** @jsx jsx */
+import { jsx } from '@emotion/core';
 import { Panel, H2, Centered, Spinner, colors } from "../styles";
 import { connect } from "react-redux";
 import { Icons } from '../@types/icons';

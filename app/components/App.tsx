@@ -1,4 +1,6 @@
-import * as React from 'react';
+/** @jsx jsx */
+import { jsx } from '@emotion/core';
+import GithubCorner from 'react-github-corner';
 import {Global, Container, Nav, NavLink, Header, Main, Footer, H1, P} from '../styles';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import {Startup} from './Startup';
@@ -12,6 +14,7 @@ import {TagsPage} from './TagsPage';
 export const App = () => 
     <DocumentTitle title="fa-tagger">
         <Global />
+        <GithubCorner href="https://github.com/jmercha/fa-tagger" size={100} />
         <Router>
             <Container>
                 <Header>

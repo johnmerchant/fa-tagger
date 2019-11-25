@@ -1,5 +1,6 @@
-import { useEffect } from 'react';
-import * as React from 'react';
+/** @jsx jsx */
+import { jsx } from '@emotion/core';
+import { useEffect, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { State } from '../reducers';
 import { Icons } from '../@types/icons';
@@ -26,7 +27,7 @@ const StartupComponent = ({ children, fetchIcons, getTags, icons, isLoading, isL
         if (!isLoading && !isLoaded && !icons) fetchIcons();
         getTags();
     });
-    return <React.Fragment>{isLoading ? <Centered><Spinner/></Centered> : children}</React.Fragment>;
+    return <Fragment>{isLoading ? <Centered><Spinner/></Centered> : children}</Fragment>;
 };
 
 const mapStateToProps = (state: State): StartupState => ({
