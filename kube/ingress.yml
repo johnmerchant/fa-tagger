@@ -1,0 +1,29 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: fa-tagger
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/issuer: "letsencrypt-prod"
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  tls:
+  - hosts:
+    - fa-tagger.jmercha.dev
+    - www.fa-tagger.jmercha.dev
+    secretName: fa-tagger
+  rules:
+    - host: fa-tagger.jmercha.dev
+      http:
+        paths:
+        - path: /
+          backend:
+            serviceName: fa-tagger
+            servicePort: 80
+    - host: www.fa-tagger.jmercha.dev
+      http:
+        paths:
+        - path: /
+          backend:
+            serviceName: fa-tagger
+            servicePort: 80

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fa-tagger
+  labels:
+    app: fa-tagger
+spec:
+  selector:
+    matchLabels:
+      app: fa-tagger
+  template:
+    metadata:
+      labels:
+        app: fa-tagger
+    spec:
+      containers:
+      - name: fa-tagger
+        image: jmercha/fa-tagger
+        ports:
+        - containerPort: 80
+          protocol: TCP
