@@ -26,7 +26,7 @@ But given the popularity of React/Redux in recent times I decided to implement V
 * [TypeScript](https://github.com/microsoft/TypeScript)
 * [React](https://github.com/facebook/react)
 * [Redux](https://github.com/reduxjs/redux)
-* [styled-components](https://github.com/styled-components/styled-components)
+* [Emotion](https://github.com/emotion-js/emotion)
 * Bundler - [Parcel](https://parceljs.org/)
 
 
