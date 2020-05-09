@@ -32,4 +32,4 @@ But given the popularity of React/Redux in recent times I decided to implement V
 
 ## Where?
 
-[Here!](https://fa-tagger.jmercha.dev/)
+[Here!](https://jmercha.dev/fa-tagger)
